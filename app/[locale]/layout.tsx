@@ -26,6 +26,7 @@ async function getLocales(locale: string) {
   }
 }
 
+/*
 export async function generateMetadata(props: Props) {
   const params = await props.params;
 
@@ -60,6 +61,7 @@ export async function generateMetadata(props: Props) {
     },
   };
 }
+*/
 
 export default async function RootLayout(props: Props) {
   const params = await props.params;

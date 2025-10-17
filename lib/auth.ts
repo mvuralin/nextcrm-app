@@ -3,10 +3,11 @@ import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 import { newUserNotify } from "./new-user-notify";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
+/*
 function getGoogleCredentials(): { clientId: string; clientSecret: string } {
   const clientId = process.env.GOOGLE_ID;
   const clientSecret = process.env.GOOGLE_SECRET;
@@ -20,6 +21,7 @@ function getGoogleCredentials(): { clientId: string; clientSecret: string } {
 
   return { clientId, clientSecret };
 }
+*/
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.JWT_SECRET,
@@ -29,7 +31,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   providers: [
-    GoogleProvider({
+    /*GoogleProvider({
       clientId: getGoogleCredentials().clientId,
       clientSecret: getGoogleCredentials().clientSecret,
     }),
@@ -38,7 +40,7 @@ export const authOptions: NextAuthOptions = {
       name: "github",
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET!,
-    }),
+    }),*/
 
     CredentialsProvider({
       name: "credentials",
